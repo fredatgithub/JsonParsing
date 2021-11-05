@@ -20,12 +20,8 @@ namespace ClassLibraryJson
     public static JToken FetchOneDatum(string testMethodName)
     {
       string jsonString = GetFileContent("sampleTest.txt");
-
       JObject obj = JObject.Parse(jsonString);
       JArray jsonArray = JArray.Parse(obj[testMethodName].ToString());
-
-      JObject jObject = new JObject(new JProperty("test", jsonArray));
-
       return jsonArray[0];
     }
 
